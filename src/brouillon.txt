@@ -31,7 +31,6 @@ function App() {
           </form>
   
           <div className="interpretation">
-            <p>onChange --> imc XX --> interpretation</p>
   
             <div>
             {state.imc && state.imc}

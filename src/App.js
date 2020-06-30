@@ -13,14 +13,15 @@ const interpretations = new Map();
 
 
 function App() {
-	const [ imc, setImc ] = useState(undefined);
+  const [ imc, setImc ] = useState(undefined);
+  const [ imcs, setImcs ] = useState([]);
+  
 
 	const inputWeight = useRef(null);
 	const inputHight = useRef(null);
 	//const setImc = useRef(null);
 
 	const handleChange = (evt) => {
-		//console.log(inputHight.current.value);
 
 		const weight = inputWeight.current.value;
 		const hight = inputHight.current.value;
@@ -42,9 +43,20 @@ function App() {
   } 
 });
 
-setImc(imc + " " + imcInterpretation);			
+setImc( "Date: " + new Date().toLocaleDateString('fr-FR')+ " "  + imc + " " + imcInterpretation);			
 		}
-	};
+  };
+  
+
+  const handleSave= evt => {
+    evt.preventDefault();
+    setImcs([imc,...imcs]); 
+
+  };
+
+
+
+
 	return (
 		<div className="App">
 			<h1> My IMC </h1>  {' '}
@@ -57,13 +69,18 @@ setImc(imc + " " + imcInterpretation);
 					placeholder=" Poids en kg"
           />
 				<input ref={inputHight} onChange={handleChange} name="hight" type="number" placeholder=" Taille en cm" />
-				<button onChange={handleChange}> Sauver </button> 
+				<button onClick={handleSave}> Sauver </button> 
 			</form>
 			 
 			<div className="interpretation">
-				onChange-- imc XX-- interpretation
+
       {imc &&  <div>{imc} </div>  }
 			</div>
+
+      <ul>
+        {imcs.map(i => <li key={i}>{i}</li>)}
+      </ul>
+
 			
 			<ul>
 				<li> Date XX / XX / XXXX imc interpretation X </li> <li> Date XX / XX / XXXX imc interpretation X </li> 
