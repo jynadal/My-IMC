@@ -13,8 +13,13 @@ const interpretations = new Map();
 
 
 function App() {
+
+  const ourImcs = window.localStorage.getItem('imcs') ? JSON.parse(window.localStorage.getItem('imcs')) : []
+
+  const [ imcs, setImcs ] = useState(ourImcs);
+
   const [ imc, setImc ] = useState(undefined);
-  const [ imcs, setImcs ] = useState([]);
+  
   
 
 	const inputWeight = useRef(null);
@@ -50,11 +55,14 @@ setImc( "Date: " + new Date().toLocaleDateString('fr-FR')+ " "  + imc + " " + im
 
   const handleSave= evt => {
     evt.preventDefault();
-    setImcs([imc,...imcs]); 
+
+    const newImcs = [imc,...imcs]
+
+    setImcs(newImcs); 
+
+    window.localStorage.setItem('imcs', JSON.stringify(newImcs))
 
   };
-
-
 
 
 	return (
@@ -81,12 +89,6 @@ setImc( "Date: " + new Date().toLocaleDateString('fr-FR')+ " "  + imc + " " + im
         {imcs.map(i => <li key={i}>{i}</li>)}
       </ul>
 
-			
-			<ul>
-				<li> Date XX / XX / XXXX imc interpretation X </li> <li> Date XX / XX / XXXX imc interpretation X </li> 
-				
-			</ul>
-			   
 		</div>
 	);
 }
