@@ -1,8 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Roboto&display=swap');
+
+* {
+  font-family: Roboto;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+ 
+}
+body {
+  background-color: #0336FF;
+}
+.wrapper {
+  padding: 20px;
+}
+
+h1, button {
+  font-family: Lobster;
+  font-weight: bold;
+  background-color: #FFDE03;
+  color:#FF0266;
+  padding: 10px;
+}
+
+input, button {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+ button {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+} 
+
+ul {
+  padding-top: 150px;
+}
+.calcul {
+  font-family: Lobster;
+  font-weight: bold;
+  color:#FF0266;
+  padding-top: 50px;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
+@media screen and (min-width: 700px) {
+  form, .calcul, ul{
+    max-width: 400px;
+    margin: auto;
+  }
+
+  input, button {
+    max-width: 200px;
+    margin:0 20px 10px 0;
+    padding: 0px;
+  }
+  
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -14,7 +74,9 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #FFDE03;
+  color: #0336FF;
+  color: #FF0266;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +97,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

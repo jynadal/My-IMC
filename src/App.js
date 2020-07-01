@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
+
 import './App.css';
 
 const interpretations = new Map();
@@ -67,27 +68,29 @@ setImc( "Date: " + new Date().toLocaleDateString('fr-FR')+ " "  + imc + " " + im
 
 	return (
 		<div className="App">
-			<h1> My IMC </h1>  {' '}
-			<form>
-				<input
-					ref={inputWeight}
-					onChange={handleChange}
-					name="weight"
-					type="number"
-					placeholder=" Poids en kg"
-          />
-				<input ref={inputHight} onChange={handleChange} name="hight" type="number" placeholder=" Taille en cm" />
-				<button onClick={handleSave}> Sauver </button> 
-			</form>
-			 
-			<div className="interpretation">
+			<h1> My IMC </h1>
+      <div className="wrapper">
+        <form>
+          <input
+            ref={inputWeight}
+            onChange={handleChange}
+            name="weight"
+            type="number"
+            placeholder=" Poids en kg"
+            />
+          <input ref={inputHight} onChange={handleChange} name="hight" type="number" placeholder=" Taille en cm" />
+          <button onClick={handleSave}> Sauver </button> 
+        </form>
+        
+        <div className="interpretation">
 
-      {imc &&  <div>{imc} </div>  }
-			</div>
+        {imc &&  <div className="calcul">{imc} </div>  }
+        </div>
 
-      <ul>
-        {imcs.map(i => <li key={i}>{i}</li>)}
-      </ul>
+        <ul>
+          {imcs.map(i => <li key={i}>{i}</li>)}
+        </ul>
+      </div>
 
 		</div>
 	);
