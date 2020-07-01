@@ -5,10 +5,17 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+
  
 }
+.App {
+  text-align: center;
+}
 body {
-  background-color: #0336FF;
+   background-color: #0336FF; 
+
+
+
 }
 .wrapper {
   padding: 20px;
@@ -44,9 +51,7 @@ ul {
   padding-top: 50px;
 }
 
-.App {
-  text-align: center;
-}
+
 
 @media screen and (min-width: 700px) {
   form, .calcul, ul{
