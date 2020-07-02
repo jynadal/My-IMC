@@ -60,7 +60,6 @@ ul {
   }
 
   input, button {
-    max-width: 200px;
     margin:0 20px 10px 0;
     padding: 0px;
   }

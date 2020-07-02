@@ -88,7 +88,7 @@ setImc( "Date: " + new Date().toLocaleDateString('fr-FR')+ " "  + imc + " " + im
         </div>
 
         <ul>
-          {imcs.map(i => <li key={i}>{i}</li>)}
+          {imcs.map((imc,index) => <li key={index}>{imc}</li>)}
         </ul>
       </div>
 
